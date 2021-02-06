@@ -1,0 +1,18 @@
+server:
+  port: 5000
+spring:  application:    name: atguigu-crowd-project
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+  redis:    host: 192.168.31.135
+  session:    store-type: redis
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1000/eureka
+aliyun:  oss:    access-key-id: LTAI4G8AxvZgFxwzBaeh4uKH
+    access-key-secret: 02BmQTst7QJQVtw7MlbRiMz2HW4fqs
+    bucket-domain: http://zhangdaxian.oss-cn-beijing.aliyuncs.com
+    bucket-name: zhangdaxian
+    end-point: http://oss-cn-beijing.aliyuncs.com
