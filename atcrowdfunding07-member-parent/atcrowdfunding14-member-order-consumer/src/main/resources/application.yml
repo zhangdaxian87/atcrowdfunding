@@ -1,0 +1,16 @@
+server:
+  port: 6000
+## 网关地址（自定义）
+service-url:
+  gatewayUrl: http://localhost
+spring:  application:    name: atguigu-crowd-order
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+  redis:    host: 192.168.31.135
+  session:    store-type: redis
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1000/eureka

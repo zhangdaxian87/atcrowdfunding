@@ -8,7 +8,7 @@
 	</parent>
 	<artifactId>atcrowdfunding17-member-api</artifactId>
 
-	<dependencies>		
+	<dependencies>
 		<dependency>
 			<groupId>com.atguigu.crowd</groupId>
 			<artifactId>atcrowdfunding05-common-util</artifactId>
@@ -19,10 +19,11 @@
 			<artifactId>atcrowdfunding09-member-entity</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		
+        <!-- Openfeign -->
 		<dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+		</dependency>
 	</dependencies>
+	 
 </project>

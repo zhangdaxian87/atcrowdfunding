@@ -44,8 +44,11 @@ public class HttpUtils {
 	 * @return
 	 * @throws Exception
 	 */
-	public static HttpResponse doGet(String host, String path, String method, Map<String, String> headers,
-			Map<String, String> querys) throws Exception {
+	public static HttpResponse doGet(	String host,
+										String path,
+										String method,
+										Map<String, String> headers,
+										Map<String, String> querys) throws Exception {
 		HttpClient httpClient = wrapClient(host);
 
 		HttpGet request = new HttpGet(buildUrl(host, path, querys));
@@ -68,8 +71,12 @@ public class HttpUtils {
 	 * @return
 	 * @throws Exception
 	 */
-	public static HttpResponse doPost(String host, String path, String method, Map<String, String> headers,
-			Map<String, String> querys, Map<String, String> bodys) throws Exception {
+	public static HttpResponse doPost(	String host,
+										String path,
+										String method,
+										Map<String, String> headers,
+										Map<String, String> querys,
+										Map<String, String> bodys) throws Exception {
 		HttpClient httpClient = wrapClient(host);
 
 		HttpPost request = new HttpPost(buildUrl(host, path, querys));
@@ -103,8 +110,12 @@ public class HttpUtils {
 	 * @return
 	 * @throws Exception
 	 */
-	public static HttpResponse doPost(String host, String path, String method, Map<String, String> headers,
-			Map<String, String> querys, String body) throws Exception {
+	public static HttpResponse doPost(	String host,
+										String path,
+										String method,
+										Map<String, String> headers,
+										Map<String, String> querys,
+										String body) throws Exception {
 		HttpClient httpClient = wrapClient(host);
 
 		HttpPost request = new HttpPost(buildUrl(host, path, querys));
@@ -131,8 +142,12 @@ public class HttpUtils {
 	 * @return
 	 * @throws Exception
 	 */
-	public static HttpResponse doPost(String host, String path, String method, Map<String, String> headers,
-			Map<String, String> querys, byte[] body) throws Exception {
+	public static HttpResponse doPost(	String host,
+										String path,
+										String method,
+										Map<String, String> headers,
+										Map<String, String> querys,
+										byte[] body) throws Exception {
 		HttpClient httpClient = wrapClient(host);
 
 		HttpPost request = new HttpPost(buildUrl(host, path, querys));
@@ -159,8 +174,12 @@ public class HttpUtils {
 	 * @return
 	 * @throws Exception
 	 */
-	public static HttpResponse doPut(String host, String path, String method, Map<String, String> headers,
-			Map<String, String> querys, String body) throws Exception {
+	public static HttpResponse doPut(	String host,
+										String path,
+										String method,
+										Map<String, String> headers,
+										Map<String, String> querys,
+										String body) throws Exception {
 		HttpClient httpClient = wrapClient(host);
 
 		HttpPut request = new HttpPut(buildUrl(host, path, querys));
@@ -187,8 +206,12 @@ public class HttpUtils {
 	 * @return
 	 * @throws Exception
 	 */
-	public static HttpResponse doPut(String host, String path, String method, Map<String, String> headers,
-			Map<String, String> querys, byte[] body) throws Exception {
+	public static HttpResponse doPut(	String host,
+										String path,
+										String method,
+										Map<String, String> headers,
+										Map<String, String> querys,
+										byte[] body) throws Exception {
 		HttpClient httpClient = wrapClient(host);
 
 		HttpPut request = new HttpPut(buildUrl(host, path, querys));
@@ -214,8 +237,11 @@ public class HttpUtils {
 	 * @return
 	 * @throws Exception
 	 */
-	public static HttpResponse doDelete(String host, String path, String method, Map<String, String> headers,
-			Map<String, String> querys) throws Exception {
+	public static HttpResponse doDelete(String host,
+										String path,
+										String method,
+										Map<String, String> headers,
+										Map<String, String> querys) throws Exception {
 		HttpClient httpClient = wrapClient(host);
 
 		HttpDelete request = new HttpDelete(buildUrl(host, path, querys));
@@ -226,8 +252,9 @@ public class HttpUtils {
 		return httpClient.execute(request);
 	}
 
-	private static String buildUrl(String host, String path, Map<String, String> querys)
-			throws UnsupportedEncodingException {
+	private static String buildUrl(	String host,
+									String path,
+									Map<String, String> querys) throws UnsupportedEncodingException {
 		StringBuilder sbUrl = new StringBuilder();
 		sbUrl.append(host);
 		if (!StringUtils.isBlank(path)) {
@@ -275,11 +302,13 @@ public class HttpUtils {
 					return null;
 				}
 
-				public void checkClientTrusted(X509Certificate[] xcs, String str) {
+				public void checkClientTrusted(	X509Certificate[] xcs,
+												String str) {
 
 				}
 
-				public void checkServerTrusted(X509Certificate[] xcs, String str) {
+				public void checkServerTrusted(	X509Certificate[] xcs,
+												String str) {
 
 				}
 			};

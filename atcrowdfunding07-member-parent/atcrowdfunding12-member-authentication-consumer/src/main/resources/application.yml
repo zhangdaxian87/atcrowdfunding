@@ -1,5 +1,8 @@
 server:
   port: 4000
+## 网关地址（自定义）
+service-url:
+  gatewayUrl: http://localhost
 spring:
   application:
     name: atguigu-crowd-auth

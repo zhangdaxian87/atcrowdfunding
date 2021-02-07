@@ -5,6 +5,27 @@
 	<artifactId>atcrowdfunding07-member-parent</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
+	
+	<!-- 继承 SpringBoot 官方指定的父工程 -->
+	<!-- <parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.6.RELEASE</version>
+	</parent> -->
+	 <!-- 统一管理jar包版本 -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<mybatis.spring.boot.version>2.1.0</mybatis.spring.boot.version>
+		<mysql.version>8.0.20</mysql.version>
+		<druid.version>1.0.5</druid.version>
+		<alipay.version>3.3.49.ALL</alipay.version>
+		<log4j.version>1.2.17</log4j.version>
+		<lombok.version>1.16.18</lombok.version>
+		<junit.version>4.12</junit.version>
+	</properties>
+
 	<modules>
 		<module>atcrowdfunding08-member-eureka</module>
 		<module>atcrowdfunding09-member-entity</module>
@@ -18,9 +39,17 @@
 		<module>atcrowdfunding17-member-api</module>
 	</modules>
 
-<!-- 配置在父工程中要管理的依赖 -->
+    <!-- 配置在父工程中要管理的依赖 -->
 	<dependencyManagement>
 		<dependencies>
+		    <!-- 导入SpringBoot需要使用的依赖信息 -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>2.1.6.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
             <!-- 导入SpringCloud需要使用的依赖信息 -->
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
@@ -30,25 +59,70 @@
                 <!-- import依赖范围表示将spring-cloud-dependencies包中的依赖信息导入 -->
 				<scope>import</scope>
 			</dependency>
-            <!-- 导入SpringBoot需要使用的依赖信息 -->
+			<!-- 整合Redis -->
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-dependencies</artifactId>
+				<artifactId>spring-boot-starter-data-redis</artifactId>
 				<version>2.1.6.RELEASE</version>
-				<type>pom</type>
-				<scope>import</scope>
 			</dependency>
+			<!-- Mybatis-Spring插件 -->
 			<dependency>
 				<groupId>org.mybatis.spring.boot</groupId>
 				<artifactId>mybatis-spring-boot-starter</artifactId>
-				<version>2.1.0</version>
+				<version>${mybatis.spring.boot.version}</version>
 			</dependency>
+			<!-- 阿里数据源 druid -->
 			<dependency>
 				<groupId>com.alibaba</groupId>
 				<artifactId>druid</artifactId>
-				<version>1.0.5</version>
+				<version>${druid.version}</version>
 			</dependency>
+			<!-- MySql版本 -->
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${mysql.version}</version>
+			</dependency>
+			<!-- 阿里支付 -->
+			<dependency>
+				<groupId>com.alipay.sdk</groupId>
+				<artifactId>alipay-sdk-java</artifactId>
+				<version>${alipay.version}</version>
+			</dependency>
+        
+			<!-- Log4j版本 -->
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+			<!-- Lombok版本 -->
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok.version}</version>
+				<optional>true</optional>
+			</dependency>
+			<!-- Junit版本 -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
+
+    <!-- Maven 构建过程相关配置 -->
+	<build>
+        <!-- 构建过程中所需要用到的插件 -->
+		<plugins>
+            <!-- 这个插件将 SpringBoot 应用打包成一个可执行的 jar 包 -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>

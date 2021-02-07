@@ -67,28 +67,28 @@
 						<a class="navbar-brand" href="#" style="font-size: 32px;" th:href="@{/}">尚筹网-创意产品众筹平台</a>
 					</div>
 					<!-- 没有登录情况下：显示登录菜单 -->
-                    <div id="navbar" class="navbar-collapse collapse" style="float: right;" th:if="${session.loginMember} == null">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="login.html" th:href="@{/auth/member/to/login/page}">登录</a></li>
-                            <li><a href="reg.html" th:href="@{/auth/member/to/reg/page}">注册</a></li>
-                            <li><a>|</a></li>
-                            <li><a href="admin-login.html">管理员入口</a></li>
-                        </ul>
-                    </div>
-                    <!-- 登录情况下：显示用户菜单 -->
-                    <div id="navbar" class="navbar-collapse collapse" style="float: right;" th:if="${session.loginMember} != null">
-                        <ul class="nav navbar-nav">
-                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                                    class="glyphicon glyphicon-user"></i> [[${session.loginMember.username}]]<span class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="member.html" th:href="@{/auth/member/to/center/page}"><i
-                                            class="glyphicon glyphicon-scale"></i> 会员中心</a></li>
-                                    <li><a href="#"><i class="glyphicon glyphicon-comment"></i> 消息</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="index.html" th:href="@{/auth/member/logout}"><i class="glyphicon glyphicon-off"></i> 退出系统</a></li>
-                                </ul></li>
-                        </ul>
-                    </div>
+					<div id="navbar" class="navbar-collapse collapse" style="float: right;" th:if="${session.loginMember} == null">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="login.html" th:href="@{/auth/member/to/login/page}">登录</a></li>
+							<li><a href="reg.html" th:href="@{/auth/member/to/reg/page}">注册</a></li>
+							<li><a>|</a></li>
+							<li><a href="admin-login.html">管理员入口</a></li>
+						</ul>
+					</div>
+					<!-- 登录情况下：显示用户菜单 -->
+					<div id="navbar" class="navbar-collapse collapse" style="float: right;" th:if="${session.loginMember} != null">
+						<ul class="nav navbar-nav">
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+									class="glyphicon glyphicon-user"></i> [[${session.loginMember.username}]]<span class="caret"></span></a>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="member.html" th:href="@{/auth/member/to/center/page}"><i
+											class="glyphicon glyphicon-scale"></i> 会员中心</a></li>
+									<li><a href="#"><i class="glyphicon glyphicon-comment"></i> 消息</a></li>
+									<li class="divider"></li>
+									<li><a href="index.html" th:href="@{/auth/member/logout}"><i class="glyphicon glyphicon-off"></i> 退出系统</a></li>
+								</ul></li>
+						</ul>
+					</div>
 				</div>
 			</nav>
 		</div>
@@ -201,8 +201,9 @@
 											<p th:if="${return.freight==0}">配送费用：包邮</p>
 											<p th:if="${return.freight>0}">配送费用：[[${return.freight}]]</p>
 											<p>预计发放时间：项目筹款成功后的[[${return.returnDate}]]天内</p>
-											<button type="button" class="btn  btn-warning btn-lg" onclick="window.location.href='pay-step-1.html'">支持</button>
-											<br> <br>
+											<a
+												th:href="'/order/confirm/return/info/'+${detailProjectVO.projectId}+'/'+${return.returnId}"
+												class="btn btn-warning btn-lg">支持</a> <br> <br>
 											<p th:text="${return.content}">感谢您的支持，在众筹开始后，您将以79元的优惠价格获得“遇见彩虹?”智能插座一件（参考价208元）。</p>
 										</div>
 									</div>

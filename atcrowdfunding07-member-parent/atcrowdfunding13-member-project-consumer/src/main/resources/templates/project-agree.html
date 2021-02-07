@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
+<title>项目发起人协议</title>
 <base th:href="@{/}" />
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -87,28 +88,28 @@
 						<a class="navbar-brand" href="index.html" style="font-size: 32px;" th:href="@{/}">尚筹网-创意产品众筹平台</a>
 					</div>
 					<!-- 没有登录情况下：显示登录菜单 -->
-                    <div id="navbar" class="navbar-collapse collapse" style="float: right;" th:if="${session.loginMember} == null">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="login.html" th:href="@{/auth/member/to/login/page}">登录</a></li>
-                            <li><a href="reg.html" th:href="@{/auth/member/to/reg/page}">注册</a></li>
-                            <li><a>|</a></li>
-                            <li><a href="admin-login.html">管理员入口</a></li>
-                        </ul>
-                    </div>
-                    <!-- 登录情况下：显示用户菜单 -->
-                    <div id="navbar" class="navbar-collapse collapse" style="float: right;" th:if="${session.loginMember} != null">
-                        <ul class="nav navbar-nav">
-                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                                    class="glyphicon glyphicon-user"></i> [[${session.loginMember.username}]]<span class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="member.html" th:href="@{/auth/member/to/center/page}"><i
-                                            class="glyphicon glyphicon-scale"></i> 会员中心</a></li>
-                                    <li><a href="#"><i class="glyphicon glyphicon-comment"></i> 消息</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="index.html" th:href="@{/auth/member/logout}"><i class="glyphicon glyphicon-off"></i> 退出系统</a></li>
-                                </ul></li>
-                        </ul>
-                    </div>
+					<div id="navbar" class="navbar-collapse collapse" style="float: right;" th:if="${session.loginMember} == null">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="login.html" th:href="@{/auth/member/to/login/page}">登录</a></li>
+							<li><a href="reg.html" th:href="@{/auth/member/to/reg/page}">注册</a></li>
+							<li><a>|</a></li>
+							<li><a href="admin-login.html">管理员入口</a></li>
+						</ul>
+					</div>
+					<!-- 登录情况下：显示用户菜单 -->
+					<div id="navbar" class="navbar-collapse collapse" style="float: right;" th:if="${session.loginMember} != null">
+						<ul class="nav navbar-nav">
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+									class="glyphicon glyphicon-user"></i> [[${session.loginMember.username}]]<span class="caret"></span></a>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="member.html" th:href="@{/auth/member/to/center/page}"><i
+											class="glyphicon glyphicon-scale"></i> 会员中心</a></li>
+									<li><a href="#"><i class="glyphicon glyphicon-comment"></i> 消息</a></li>
+									<li class="divider"></li>
+									<li><a href="index.html" th:href="@{/auth/member/logout}"><i class="glyphicon glyphicon-off"></i> 退出系统</a></li>
+								</ul></li>
+						</ul>
+					</div>
 				</div>
 			</nav>
 		</div>
@@ -149,7 +150,7 @@
 									</b>
 								</p>
 								<h5>第1条 签约主体</h5>
-								<p>本协议由尚筹网网站（包括但不限于www.atcrowd.com及尚筹网众筹平台）的所有者及其关联公司（以下简称为“尚筹网”），在尚筹网众筹平台（zc.atcrowd.com）与登录、使用尚筹网众筹平台的项目发起人（以下简称
+								<p>本协议由尚筹网网站（包括但不限于及尚筹网众筹平台）的所有者及其关联公司（以下简称为“尚筹网”），在尚筹网众筹平台（zc.atcrowd.com）与登录、使用尚筹网众筹平台的项目发起人（以下简称
 									“发起人”）共同签署（签约地：江苏省南京市）。</p>
 								<h5>第2条 定 义</h5>
 								<p>2.1
@@ -270,7 +271,7 @@
 								<h5>《尚筹网众筹回报服务协议》</h5>
 								<h5>（注：本协议只适用于尚筹网众筹平台发布的科技、设计类众筹）</h5>
 								<p>鉴于：</p>
-								<p>发起人在隶属于尚筹网（www.atcrowd.com）网站旗下尚筹网众筹平台（以下简称“尚筹网”）上发起项目筹款需求，并承诺给项目支持者提供回报。为保护支持者的合法权益，规范发起人的行为，维护众筹平台秩序，特拟定本协议。发起人承诺严格履行本协议约定，按照项目承诺为客户提供回报及相关服务。</p>
+								<p>发起人在隶属于尚筹网（）网站旗下尚筹网众筹平台（以下简称“尚筹网”）上发起项目筹款需求，并承诺给项目支持者提供回报。为保护支持者的合法权益，规范发起人的行为，维护众筹平台秩序，特拟定本协议。发起人承诺严格履行本协议约定，按照项目承诺为客户提供回报及相关服务。</p>
 								<h5>1、 回报产品的退换服务</h5>
 								<p>1.1发起人承诺自支持者收到回报产品的15天内提供无理由退换货服务，退换货过程中产生的快递费用，由发起人承担。如支持者选择退货的，发起人应于收到退回货物之日起3个工作日内为支持者全额退款。如支持者选择换货的，发起人应于收到更换货物之日起5个工作日内完成换货处理。</p>
 								<p>1.2发起人承诺自支持者收到回报产品的第16天至1年内，提供免费维修或换新服务。如回报产品出现质量问题或因非人为原因无法正常使用，发起人应在收到支持者所更换货物之日起5个工作日内完成换货处理。货物更换过程中产生的快递费用，由发起人承担。</p>
@@ -359,7 +360,7 @@
 									4.2对于发起人应当承担的违约金，尚筹网或尚筹网众筹平台有权从发起人的保证金及质保金或其他由尚筹网或尚筹网众筹平台控制的款项中直接抵扣，不予返还。<b>保证金及质保金不足以支付的，尚筹网或尚筹网众筹平台均有权继续向发起人追偿。</b>
 								</p>
 								<h5>5、 其他</h5>
-								<p>5.1发起人同意遵守尚筹网网站（www.atcrowd.com）及其旗下任何网站已经发布的或将来可能发布的各类规则、操作流程。对违反约定或规定给客户造成损失的，发起人愿意接受尚筹网或尚筹网众筹平台的各项处罚。</p>
+								<p>5.1发起人同意遵守尚筹网网站（）及其旗下任何网站已经发布的或将来可能发布的各类规则、操作流程。对违反约定或规定给客户造成损失的，发起人愿意接受尚筹网或尚筹网众筹平台的各项处罚。</p>
 								<p>5.2凡因本协议引起的或与本协议有关的任何争议，由双方友好协商解决。协商不成时，任何一方均应向合同签订地法院（即：南京市玄武区人民法院）提起诉讼。</p>
 							</div>
 						</div>

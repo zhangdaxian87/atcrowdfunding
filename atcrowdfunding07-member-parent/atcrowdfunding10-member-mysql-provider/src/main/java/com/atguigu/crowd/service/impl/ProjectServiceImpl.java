@@ -66,14 +66,6 @@ public class ProjectServiceImpl implements ProjectService {
 		String createdate = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
 		projectPO.setCreatedate(createdate);
 		
-		// zhangqiang 测试 数据
-		String deploydate = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
-		projectPO.setDeploydate(deploydate);	// 众筹开始是间间
-		projectPO.setSupportmoney(80000);		// 己筹金额
-		projectPO.setSupporter(78);		// 己有多少人支持
-		projectPO.setFollower(521);		// 关注人数
-		
-		
 		// 修复bug：status设置成0，表示即将开始
 		projectPO.setStatus(0);
 		
